@@ -16,10 +16,14 @@ global.localStorage = (() => {
   };
 })();
 
-// Test 1: Data integrity
+// Test 1: Data integrity & Product Images
 assert.strictEqual(servicesData.length, 6, 'Should have 6 services');
 assert.strictEqual(productsData.length, 6, 'Should have 6 products');
-console.log('✓ Data catalogs loaded correctly');
+productsData.forEach(p => {
+  assert.ok(p.image, `Product ${p.id} must have an image`);
+  assert.ok(p.image.endsWith('.jpg'), `Product ${p.id} image must end in .jpg`);
+});
+console.log('✓ Data catalogs and product images loaded correctly');
 
 // Test 2: Cart calculations & LA County 9.5% tax
 const cart = new CartManager('test_cart_suite');

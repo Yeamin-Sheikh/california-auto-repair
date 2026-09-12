@@ -27,7 +27,13 @@ california-auto-repair/
 ├── assets/
 │   ├── images/
 │   │   ├── hero.jpg
-│   │   └── diagnostic.jpg
+│   │   ├── diagnostic.jpg
+│   │   ├── part-brembo.jpg
+│   │   ├── part-mobil1.jpg
+│   │   ├── part-bosch.jpg
+│   │   ├── part-ngk.jpg
+│   │   ├── part-optima.jpg
+│   │   └── part-michelin.jpg
 │   └── svgs/
 │       ├── logo.svg
 │       └── icons.svg
@@ -42,6 +48,7 @@ california-auto-repair/
 │   └── products.js
 ├── tests/
 │   └── runner.js
+├── config.json
 ├── index.html
 ├── package.json
 └── README.md

@@ -1,0 +1,22 @@
+{
+  "shopName": "United Auto Experts",
+  "streetAddress": "5022 W Pico Blvd",
+  "city": "Los Angeles",
+  "state": "CA",
+  "postalCode": "90019",
+  "phone": "(323) 933-5555",
+  "certifications": [
+    "ASE Master Certified Technicians",
+    "California STAR Certified Smog Check Station",
+    "Bureau of Automotive Repair (BAR) License #ARD284910",
+    "California Licensed Refrigerant Handling & Recycling Facility"
+  ],
+  "taxRate": 0.095,
+  "laborRateHourlyUSD": 165.00,
+  "operatingHours": {
+    "monday_friday": "07:30 AM - 06:00 PM",
+    "saturday": "08:00 AM - 04:00 PM",
+    "sunday": "Closed"
+  },
+  "warranty": "24-Month / 24,000-Mile California Nationwide Warranty"
+}

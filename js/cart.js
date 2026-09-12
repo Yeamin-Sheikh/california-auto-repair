@@ -42,6 +42,7 @@ export class CartManager {
         price: Number(product.price),
         sku: product.sku || product.id,
         icon: product.icon || 'icon-wrench',
+        image: product.image || 'part-brembo.jpg',
         quantity: quantity
       });
     }

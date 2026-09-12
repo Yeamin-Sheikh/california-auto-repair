@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="product-card" data-id="${product.id}">
         <div class="product-img-wrap">
           ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
-          <svg class="product-img-icon"><use href="assets/svgs/icons.svg#${product.icon}"></use></svg>
+          <img src="assets/images/${product.image}" alt="${product.title}" class="product-card-img" loading="lazy">
         </div>
         <div class="product-info">
           <span class="product-category">${product.category}</span>
@@ -157,9 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         cartItemsList.innerHTML = cart.items.map(item => `
           <div class="cart-item" data-id="${item.id}">
-            <div style="width:40px;height:40px;background:#334155;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#DC2626;">
-              <svg class="icon" style="width:20px;height:20px;"><use href="assets/svgs/icons.svg#${item.icon}"></use></svg>
-            </div>
+            <img src="assets/images/${item.image || 'part-brembo.jpg'}" alt="${item.title}" style="width:42px;height:42px;object-fit:cover;border-radius:6px;border:1px solid #475569;">
             <div class="cart-item-info">
               <div class="cart-item-title">${item.title}</div>
               <div class="cart-item-price">$${item.price.toFixed(2)}</div>
@@ -344,5 +342,53 @@ document.addEventListener('DOMContentLoaded', () => {
     modalOverlay?.classList.remove('open');
     checkoutModal?.classList.remove('open');
     showToast(`Order Placed Successfully! Reference #${orderNumber}`);
+  });
+
+  // Right-Click Context Menu Implementation (User Rule Compliance)
+  const contextMenu = document.getElementById('custom-context-menu');
+  window.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    if (!contextMenu) return;
+    contextMenu.style.left = `${Math.min(e.clientX, window.innerWidth - 180)}px`;
+    contextMenu.style.top = `${Math.min(e.clientY, window.innerHeight - 180)}px`;
+    contextMenu.classList.add('open');
+  });
+
+  window.addEventListener('click', () => {
+    contextMenu?.classList.remove('open');
+  });
+
+  contextMenu?.addEventListener('click', async (e) => {
+    const item = e.target.closest('.context-menu-item');
+    if (!item) return;
+    const action = item.getAttribute('data-action');
+    try {
+      if (action === 'copy') {
+        const sel = window.getSelection()?.toString();
+        if (sel) await navigator.clipboard.writeText(sel);
+      } else if (action === 'paste') {
+        const text = await navigator.clipboard.readText();
+        const active = document.activeElement;
+        if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA')) {
+          active.value += text;
+        }
+      } else if (action === 'cut') {
+        const active = document.activeElement;
+        if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA')) {
+          await navigator.clipboard.writeText(active.value);
+          active.value = '';
+        }
+      } else if (action === 'selectall') {
+        const active = document.activeElement;
+        if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA')) {
+          active.select();
+        } else {
+          document.execCommand('selectAll');
+        }
+      }
+    } catch {
+      // Fallback
+    }
+    contextMenu.classList.remove('open');
   });
 });

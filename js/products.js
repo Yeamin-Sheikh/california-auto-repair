@@ -69,6 +69,7 @@ export const productsData = [
     reviewsCount: 142,
     badge: 'Best Seller',
     icon: 'icon-brakes',
+    image: 'part-brembo.jpg',
     sku: 'BRM-P06024N',
     specs: 'Direct OEM fit, chamfered edge, zero noise, fits Audi, BMW, Honda, Toyota',
     inStock: true
@@ -82,6 +83,7 @@ export const productsData = [
     reviewsCount: 310,
     badge: 'Popular',
     icon: 'icon-oil',
+    image: 'part-mobil1.jpg',
     sku: 'MOB-0W20-5QT',
     specs: '5 Quarts full synthetic with Mobil 1 Extended Performance M1-110A filter',
     inStock: true
@@ -95,6 +97,7 @@ export const productsData = [
     reviewsCount: 98,
     badge: 'California Rain',
     icon: 'icon-wrench',
+    image: 'part-bosch.jpg',
     sku: 'BSH-26A20A-SET',
     specs: 'Dual beam spring design with patented ClearMax 365 rubber technology',
     inStock: true
@@ -108,6 +111,7 @@ export const productsData = [
     reviewsCount: 84,
     badge: 'High Performance',
     icon: 'icon-spark-plug',
+    image: 'part-ngk.jpg',
     sku: 'NGK-94460-4PK',
     specs: 'Laser-welded iridium center electrode tip, 100,000 mile service life',
     inStock: true
@@ -121,6 +125,7 @@ export const productsData = [
     reviewsCount: 63,
     badge: 'Heavy Duty',
     icon: 'icon-battery',
+    image: 'part-optima.jpg',
     sku: 'OPT-D34-750CCA',
     specs: '12V 750 Cold Cranking Amps, SpiralCell technology, vibration resistant',
     inStock: true
@@ -134,6 +139,7 @@ export const productsData = [
     reviewsCount: 220,
     badge: 'Track & Street',
     icon: 'icon-tire',
+    image: 'part-michelin.jpg',
     sku: 'MCH-PS4S-2454019',
     specs: 'Ultra-high performance summer compound, 300 AA A traction rating',
     inStock: true
