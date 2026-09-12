@@ -5,8 +5,16 @@ import sys
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
-REPO = r"e:\Scripts\GitHub\california-auto-repair"
+REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 img_pattern = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.IGNORECASE)
+
+# Verify js/app.js does not use external icons.svg
+js_app_path = os.path.join(REPO, "js", "app.js")
+if os.path.exists(js_app_path):
+    with open(js_app_path, "r", encoding="utf-8") as jfp:
+        js_content = jfp.read()
+        assert "assets/svgs/icons.svg" not in js_content, "Found external assets/svgs/icons.svg in js/app.js"
+print("✓ js/app.js verified: 0 external SVG sprite references!")
 
 html_files = [f for f in os.listdir(REPO) if f.endswith(".html")]
 print(f"Testing {len(html_files)} HTML pages in california-auto-repair...")
@@ -18,6 +26,7 @@ for f in html_files:
     
     # Verify inlined SVG sprite exists
     assert '<symbol id="icon-' in html, f"Inlined SVG sprite missing in {f}"
+    assert "assets/svgs/icons.svg" not in html, f"Found external SVG sprite reference in {f}"
     
     # Find all images
     matches = img_pattern.findall(html)

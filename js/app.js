@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     servicesContainer.innerHTML = servicesData.map(service => `
       <div class="service-card" data-id="${service.id}">
         <div class="service-icon-box">
-          <svg class="icon" style="width:28px;height:28px;"><use href="assets/svgs/icons.svg#${service.icon}"></use></svg>
+          <svg class="icon" style="width:28px;height:28px;"><use href="#${service.icon}"></use></svg>
         </div>
         <h3>${service.title}</h3>
         <p>${service.description}</p>
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     reviewsContainer.innerHTML = reviewsData.map(rev => `
       <div class="review-card">
         <div class="review-stars">
-          ${Array(rev.rating).fill('<svg class="icon" style="width:18px;height:18px;"><use href="assets/svgs/icons.svg#icon-star"></use></svg>').join('')}
+          ${Array(rev.rating).fill('<svg class="icon" style="width:18px;height:18px;"><use href="#icon-star"></use></svg>').join('')}
         </div>
         <p class="review-text">"${rev.text}"</p>
         <div class="reviewer">
