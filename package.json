@@ -1,0 +1,20 @@
+{
+  "name": "california-auto-repair",
+  "version": "1.0.0",
+  "description": "eCommerce platform and service reservation portal for United Auto Experts in Los Angeles, California",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/runner.js",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "auto-repair",
+    "california",
+    "los-angeles",
+    "ecommerce",
+    "mechanic",
+    "car-parts"
+  ],
+  "author": "Yeamin Sheikh <yeaminsheikh12@gmail.com>",
+  "license": "MIT"
+}

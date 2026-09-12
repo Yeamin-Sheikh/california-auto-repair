@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>United Auto Experts | Premier Auto Repair & Parts — Los Angeles, CA</title>
+  <meta name="description" content="Certified Los Angeles auto repair shop and performance parts store. ASE certified technicians, STAR smog certification, brake repair, computer diagnostics. Located at 5022 W Pico Blvd.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="top-bar-content">
+      <span class="top-badge">California Special</span>
+      <span>Complimentary 28-Point Safety & Brake Inspection with Any Oil Service!</span>
+      <span style="opacity: 0.8;">Call Direct: (323) 933-5555</span>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#hero" class="brand-logo">
+          <img src="assets/svgs/logo.svg" alt="United Auto Experts Los Angeles" height="46">
+        </a>
+        <ul class="nav-links">
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#store" class="nav-link">Parts & Kits</a></li>
+          <li><a href="#estimator" class="nav-link">Cost Calculator</a></li>
+          <li><a href="#about" class="nav-link">About Shop</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#location" class="nav-link">Location</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle theme">
+            <svg class="icon"><use href="assets/svgs/icons.svg#icon-spark-plug"></use></svg>
+          </button>
+          <button id="cart-trigger" class="cart-trigger-btn" title="View Cart">
+            <svg class="icon"><use href="assets/svgs/icons.svg#icon-cart"></use></svg>
+            <span id="cart-badge" class="cart-badge">0</span>
+          </button>
+          <a href="#book" class="btn btn-primary book-service-btn" data-service="Full Synthetic Mobil 1 Oil & Filter Service">Schedule Bay</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badges">
+            <span class="hero-badge-item">
+              <svg class="icon" style="color:#10B981;"><use href="assets/svgs/icons.svg#icon-shield-check"></use></svg>
+              ASE Master Certified
+            </span>
+            <span class="hero-badge-item">
+              <svg class="icon" style="color:#F59E0B;"><use href="assets/svgs/icons.svg#icon-star"></use></svg>
+              STAR Smog Station
+            </span>
+            <span class="hero-badge-item">
+              5022 W Pico Blvd, Los Angeles
+            </span>
+          </div>
+          <h1>Precision Automotive Care <span class="hero-highlight">In Los Angeles.</span></h1>
+          <p class="hero-description">
+            Serving Southern California since 1998. Factory-level computer diagnostics, manufacturer-spec maintenance, and authentic OEM performance parts.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#store" class="btn btn-primary">Shop Auto Parts</a>
+            <a href="#estimator" class="btn btn-secondary">Get Instant Estimate</a>
+          </div>
+        </div>
+
+        <!-- Quick Booking Box -->
+        <div class="quick-book-card">
+          <h3>
+            <svg class="icon" style="color:var(--primary);"><use href="assets/svgs/icons.svg#icon-calendar"></use></svg>
+            Express Bay Reservation
+          </h3>
+          <p>Book certified technicians directly with same-day bay availability.</p>
+          <form id="express-form" onsubmit="event.preventDefault(); document.getElementById('booking-service-select').value='Mobil 1 Synthetic Oil & Filter Service'; document.getElementById('modal-overlay').classList.add('open'); document.getElementById('booking-modal').classList.add('open');">
+            <div class="form-group">
+              <label>Select Vehicle Make & Year</label>
+              <input type="text" class="form-control" placeholder="e.g. 2022 Porsche 911 or Honda Accord" required>
+            </div>
+            <div class="form-group">
+              <label>Service Needed</label>
+              <select class="form-control" required>
+                <option value="oil">Synthetic Oil & Filter Service</option>
+                <option value="brakes">Ceramic Brake Inspection & Replacement</option>
+                <option value="diag">OBD-II Diagnostic Scan</option>
+                <option value="smog">California STAR Smog Check</option>
+                <option value="ac">A/C Climate Recharge</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Check Bay Slots</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Shop Capabilities</span>
+        <h2 class="section-title">Certified Automotive Services</h2>
+        <p class="section-subtitle">
+          Every repair is backed by our 24-Month / 24,000-Mile California Nationwide Warranty.
+        </p>
+      </div>
+      <div id="services-grid" class="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- Auto Parts & Maintenance Kits eCommerce Store -->
+  <section id="store" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Parts Depot</span>
+        <h2 class="section-title">OEM Replacement Parts & Maintenance Kits</h2>
+        <p class="section-subtitle">
+          Genuine components and premium aftermarket kits available for in-store pickup in Los Angeles or fast California ground delivery.
+        </p>
+      </div>
+
+      <!-- Store Controls -->
+      <div class="store-controls">
+        <div class="category-pills">
+          <button class="filter-pill active" data-category="all">All Parts</button>
+          <button class="filter-pill" data-category="brakes">Brakes</button>
+          <button class="filter-pill" data-category="fluids">Fluids & Filters</button>
+          <button class="filter-pill" data-category="engine">Engine</button>
+          <button class="filter-pill" data-category="electrical">Electrical</button>
+          <button class="filter-pill" data-category="wheels">Tires</button>
+        </div>
+        <div class="search-box">
+          <input type="text" id="search-products" class="form-control" placeholder="Search by SKU, brand, or part name...">
+        </div>
+      </div>
+
+      <div id="products-grid" class="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- Cost Estimator Calculator -->
+  <section id="estimator" class="section">
+    <div class="container">
+      <div class="estimator-card">
+        <div>
+          <span class="section-tag">Transparent Pricing</span>
+          <h2 class="section-title" style="text-align: left;">Live Repair Cost Estimator</h2>
+          <p class="section-subtitle" style="text-align: left; margin-bottom: 2rem;">
+            No surprises or hidden California shop disposal add-ons. Calculate your honest ballpark estimate instantly based on vehicle system and mileage.
+          </p>
+          <form id="estimator-form">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <div class="form-group">
+                <label>System Requiring Service</label>
+                <select id="est-system" class="form-control">
+                  <option value="brakes">Brakes (Pads & Rotors)</option>
+                  <option value="oil-change">Synthetic Oil Service</option>
+                  <option value="transmission">Transmission Service</option>
+                  <option value="cooling">Cooling & Radiator</option>
+                  <option value="suspension">Suspension & Struts</option>
+                  <option value="electrical">Alternator & Starter</option>
+                  <option value="engine-tune">Spark Plugs & Tune-up</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Vehicle Mileage</label>
+                <select id="est-mileage" class="form-control">
+                  <option value="30000">Under 40,000 miles</option>
+                  <option value="75000">40,000 - 90,000 miles</option>
+                  <option value="120000">Over 100,000 miles</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Vehicle Classification</label>
+              <select id="est-vtype" class="form-control">
+                <option value="standard">Standard Domestic & Asian (Honda, Toyota, Ford)</option>
+                <option value="luxury">European / Luxury (BMW, Mercedes, Audi, Porsche)</option>
+                <option value="heavy-truck">Heavy Duty Truck / Commercial Fleet</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Calculate Price Range</button>
+          </form>
+        </div>
+
+        <div class="estimator-output" id="estimate-display">
+          <div style="color: var(--text-muted); font-size: 0.95rem;">Select your parameters to view live pricing calculation</div>
+          <div class="estimate-amount">$220 - $480</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Calculated for Los Angeles, CA labor rate standards</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section section-dark">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+        <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-xl);">
+          <img src="assets/images/diagnostic.jpg" alt="California Automotive Diagnostic Bay" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div>
+          <span class="section-tag">California Certified Excellence</span>
+          <h2 class="section-title" style="text-align: left;">Modern Diagnostics Meets Master Craftsmanship</h2>
+          <p style="color: var(--text-light); margin-bottom: 1.25rem;">
+            Located at 5022 W Pico Blvd in Los Angeles, United Auto Experts houses Hunter HawkEye digital alignment racks, factory OBD-II logic scanners, and ASE Master technicians with over 25 years of Southern California automotive experience.
+          </p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-light); font-size: 0.95rem;">
+            <li style="display:flex; align-items:center; gap:0.6rem;">
+              <svg class="icon" style="color:#10B981;"><use href="assets/svgs/icons.svg#icon-check"></use></svg>
+              Direct digital inspection reports with high-resolution photos
+            </li>
+            <li style="display:flex; align-items:center; gap:0.6rem;">
+              <svg class="icon" style="color:#10B981;"><use href="assets/svgs/icons.svg#icon-check"></use></svg>
+              Environmentally licensed California waste oil recycling facility
+            </li>
+            <li style="display:flex; align-items:center; gap:0.6rem;">
+              <svg class="icon" style="color:#10B981;"><use href="assets/svgs/icons.svg#icon-check"></use></svg>
+              OEM factory scan tools for Mercedes, BMW, Audi, Toyota, and Lexus
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews -->
+  <section id="reviews" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Customer Trust</span>
+        <h2 class="section-title">Verified Los Angeles Driver Reviews</h2>
+        <p class="section-subtitle">
+          Rated 4.9 Stars across Google Maps, Yelp, and CarFax certified service records.
+        </p>
+      </div>
+      <div id="reviews-grid" class="reviews-grid"></div>
+    </div>
+  </section>
+
+  <!-- Location & Hours Section -->
+  <section id="location" class="section section-dark">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; background: var(--bg-card); padding: 3rem; border-radius: var(--radius-xl); border: 1px solid var(--border-color);">
+        <div>
+          <span class="section-tag">Visit Our Shop</span>
+          <h2 style="font-size: 1.85rem; margin-bottom: 1rem;">Shop Location & Schedule</h2>
+          <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem;">
+            <div style="display:flex; gap: 1rem; align-items: flex-start;">
+              <svg class="icon" style="color:var(--primary); margin-top: 4px;"><use href="assets/svgs/icons.svg#icon-map-pin"></use></svg>
+              <div>
+                <strong>United Auto Experts</strong>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">5022 W Pico Blvd, Los Angeles, CA 90019</p>
+                <a href="https://maps.google.com/?q=5022+W+Pico+Blvd+Los+Angeles+CA+90019" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-size: 0.85rem; text-decoration: none; font-weight: 600;">Open in Google Maps &rarr;</a>
+              </div>
+            </div>
+
+            <div style="display:flex; gap: 1rem; align-items: flex-start;">
+              <svg class="icon" style="color:var(--primary); margin-top: 4px;"><use href="assets/svgs/icons.svg#icon-phone"></use></svg>
+              <div>
+                <strong>Direct Service Desk</strong>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">(323) 933-5555 | service@unitedautoexperts-la.com</p>
+              </div>
+            </div>
+
+            <div style="display:flex; gap: 1rem; align-items: flex-start;">
+              <svg class="icon" style="color:var(--primary); margin-top: 4px;"><use href="assets/svgs/icons.svg#icon-clock"></use></svg>
+              <div>
+                <strong>Operating Hours</strong>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Monday &ndash; Friday: 8:00 AM &ndash; 6:30 PM</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Saturday: 8:30 AM &ndash; 4:00 PM | Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-subtle); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: center; text-align: center;">
+          <div style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: var(--radius-full); background: rgba(220, 38, 38, 0.15); color: var(--primary); margin: 0 auto 1.5rem auto;">
+            <svg class="icon" style="width: 32px; height: 32px;"><use href="assets/svgs/icons.svg#icon-map-pin"></use></svg>
+          </div>
+          <h3 style="margin-bottom: 0.5rem;">Mid-Wilshire Los Angeles Hub</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Conveniently located between La Brea Ave and Fairfax Ave on West Pico Boulevard. Secure overnight vehicle parking available for early bird drop-offs.
+          </p>
+          <a href="https://maps.google.com/?q=5022+W+Pico+Blvd+Los+Angeles+CA+90019" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Get Turn-By-Turn Navigation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/svgs/logo.svg" alt="United Auto Experts" height="42" style="margin-bottom: 1rem;">
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); max-width: 320px;">
+            Comprehensive automotive repair, computer diagnostic scanning, and certified replacement parts store in Los Angeles, California.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Popular Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Brake Inspection</a></li>
+            <li><a href="#services">STAR Smog Certification</a></li>
+            <li><a href="#services">Mobil 1 Synthetic Oil</a></li>
+            <li><a href="#services">Laser Wheel Alignment</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>OEM Parts Store</h4>
+          <ul class="footer-links">
+            <li><a href="#store">Brembo Ceramic Pads</a></li>
+            <li><a href="#store">Mobil 1 Oil Kits</a></li>
+            <li><a href="#store">Bosch Beam Wipers</a></li>
+            <li><a href="#store">NGK Laser Iridium Plugs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>California Compliance</h4>
+          <ul class="footer-links">
+            <li><span style="font-size:0.85rem;">CA BAR Reg: ARD00284910</span></li>
+            <li><span style="font-size:0.85rem;">STAR Certified Station</span></li>
+            <li><span style="font-size:0.85rem;">EPA Waste Handler #CAL00021</span></li>
+            <li><a href="#location">Privacy & Warranties</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 United Auto Experts. All rights reserved. 5022 W Pico Blvd, Los Angeles, CA 90019.</div>
+        <div>Built for speed and precision.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Slide-over Drawer -->
+  <div id="cart-overlay" class="cart-overlay"></div>
+  <aside id="cart-drawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3 style="display:flex; align-items:center; gap:0.5rem;">
+        <svg class="icon" style="color:var(--primary);"><use href="assets/svgs/icons.svg#icon-cart"></use></svg>
+        Your Parts Cart
+      </h3>
+      <button id="close-cart-btn" class="qty-btn" style="width:32px;height:32px;font-size:1.2rem;">&times;</button>
+    </div>
+
+    <div id="cart-items-list" class="cart-items-list"></div>
+
+    <div class="cart-footer">
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+        <input type="text" id="promo-input" class="form-control" placeholder="Promo code (try CALIF15)" style="padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+        <button id="apply-promo-btn" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Apply</button>
+      </div>
+      <div class="cart-summary-row">
+        <span>Parts Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div id="cart-discount-row" class="cart-summary-row" style="display:none; color: #10B981;">
+        <span>Promo Discount</span>
+        <span id="cart-discount">-$0.00</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>CA Sales Tax (9.5% LA County)</span>
+        <span id="cart-tax">$0.00</span>
+      </div>
+      <div class="cart-summary-row cart-summary-total">
+        <span>Estimated Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button id="proceed-checkout-btn" class="btn btn-primary" style="width: 100%; margin-top: 1.25rem;">
+        Proceed to Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Modal Overlay -->
+  <div id="modal-overlay" class="modal-overlay"></div>
+
+  <!-- Service Booking Modal -->
+  <div id="booking-modal" class="modal-card" style="display:none; position:fixed; z-index:301;">
+    <button class="modal-close">&times;</button>
+    <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Schedule Service Bay</h3>
+    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Select your preferred vehicle details and appointment time.</p>
+    <form id="booking-form">
+      <div class="form-group">
+        <label>Selected Service</label>
+        <input type="text" id="booking-service-select" name="service" class="form-control" readonly>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem;">
+        <div class="form-group">
+          <label>Year</label>
+          <input type="number" name="year" class="form-control" value="2021" required>
+        </div>
+        <div class="form-group">
+          <label>Make</label>
+          <input type="text" name="make" class="form-control" placeholder="e.g. BMW" required>
+        </div>
+        <div class="form-group">
+          <label>Model</label>
+          <input type="text" name="model" class="form-control" placeholder="e.g. M3" required>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+        <div class="form-group">
+          <label>Appointment Date</label>
+          <input type="date" name="date" class="form-control" value="2026-09-15" required>
+        </div>
+        <div class="form-group">
+          <label>Bay Time Slot</label>
+          <select name="timeSlot" class="form-control" required>
+            <option>08:30 AM</option>
+            <option>10:00 AM</option>
+            <option>11:30 AM</option>
+            <option>01:30 PM</option>
+            <option>03:00 PM</option>
+            <option>04:30 PM</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Driver Full Name</label>
+        <input type="text" name="name" class="form-control" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label>Mobile Number for SMS Bay Updates</label>
+        <input type="tel" name="phone" class="form-control" placeholder="(310) 555-0199" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Confirm Bay Reservation</button>
+    </form>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="modal-card" style="display:none; position:fixed; z-index:301;">
+    <button class="modal-close">&times;</button>
+    <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Parts Checkout & Pickup</h3>
+    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Ready for same-day counter pickup at 5022 W Pico Blvd or direct shipping across California.</p>
+    <form id="checkout-form">
+      <div class="form-group">
+        <label>Fulfillment Option</label>
+        <select class="form-control">
+          <option>In-Store Pickup (Free - 5022 W Pico Blvd)</option>
+          <option>California Express Courier ($12.50)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" class="form-control" placeholder="Jane Doe" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" class="form-control" placeholder="jane@example.com" required>
+      </div>
+      <div class="form-group">
+        <label>California Delivery / Billing Address</label>
+        <input type="text" class="form-control" placeholder="123 Wilshire Blvd, Los Angeles, CA 90036" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Complete Order</button>
+    </form>
+  </div>
+
+  <!-- Include SVG sprite symbols -->
+  <div style="display: none;">
+    <object id="svg-sprite-holder" data="assets/svgs/icons.svg" type="image/svg+xml"></object>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
