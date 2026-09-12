@@ -38,21 +38,165 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AutoPartsStore",
-    "@id": "https://yeamin-sheikh.github.io/california-auto-repair/#store",
-    "name": "United Auto Experts OEM Parts Store",
-    "image": "https://yeamin-sheikh.github.io/california-auto-repair/assets/images/part-brembo.jpg",
-    "telephone": "+1-323-933-5555",
-    "url": "https://yeamin-sheikh.github.io/california-auto-repair/shop.html",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "5022 W Pico Blvd",
-      "addressLocality": "Los Angeles",
-      "addressRegion": "CA",
-      "postalCode": "90019",
-      "addressCountry": "US"
-    }
+    "@graph": [
+      {
+        "@type": "AutoPartsStore",
+        "@id": "https://yeamin-sheikh.github.io/california-auto-repair/#store",
+        "name": "United Auto Experts OEM Parts Store",
+        "image": "https://yeamin-sheikh.github.io/california-auto-repair/assets/images/part-brembo.jpg",
+        "telephone": "+1-323-933-5555",
+        "email": "service@unitedautoexperts.com",
+        "url": "https://yeamin-sheikh.github.io/california-auto-repair/shop.html",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "5022 W Pico Blvd",
+          "addressLocality": "Los Angeles",
+          "addressRegion": "CA",
+          "postalCode": "90019",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 34.0483,
+          "longitude": -118.3531
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "07:30",
+            "closes": "18:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "08:00",
+            "closes": "16:00"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "name": "Brembo P06075N Ceramic Brake Pads",
+        "image": "https://yeamin-sheikh.github.io/california-auto-repair/assets/images/part-brembo.jpg",
+        "description": "Direct OEM replacement ceramic brake pads with multi-layer chamfered shims for silent braking and low dust.",
+        "sku": "BREMBO-P06075N",
+        "brand": {
+          "@type": "Brand",
+          "name": "Brembo"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "89.50",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://yeamin-sheikh.github.io/california-auto-repair/#store"
+          }
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Mobil 1 ESP 0W-40 Synthetic Motor Oil",
+        "image": "https://yeamin-sheikh.github.io/california-auto-repair/assets/images/part-mobil1.jpg",
+        "description": "Porsche A40 and Mercedes-Benz 229.5 certified full synthetic formula engineered for high thermal protection.",
+        "sku": "MOBIL-ESP-0W40",
+        "brand": {
+          "@type": "Brand",
+          "name": "Mobil 1"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "38.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://yeamin-sheikh.github.io/california-auto-repair/#store"
+          }
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Bosch 17025 Wideband Oxygen Sensor",
+        "image": "https://yeamin-sheikh.github.io/california-auto-repair/assets/images/part-bosch.jpg",
+        "description": "Patented planar ceramic element provides closed-loop air-fuel feedback to optimize engine efficiency.",
+        "sku": "BOSCH-17025",
+        "brand": {
+          "@type": "Brand",
+          "name": "Bosch"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "124.95",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://yeamin-sheikh.github.io/california-auto-repair/#store"
+          }
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Optima D34/78 YellowTop AGM Battery",
+        "image": "https://yeamin-sheikh.github.io/california-auto-repair/assets/images/part-optima.jpg",
+        "description": "SpiralCell technology delivering 750 Cold Cranking Amps with high cycle life and vibration resistance.",
+        "sku": "OPTIMA-D34-78",
+        "brand": {
+          "@type": "Brand",
+          "name": "Optima"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "289.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://yeamin-sheikh.github.io/california-auto-repair/#store"
+          }
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Michelin Pilot Sport 4S, 245/40ZR18",
+        "image": "https://yeamin-sheikh.github.io/california-auto-repair/assets/images/part-michelin.jpg",
+        "description": "Ultra-high performance summer compound designed for lateral grip, short braking distances, and steering response.",
+        "sku": "MICH-PS4S-245",
+        "brand": {
+          "@type": "Brand",
+          "name": "Michelin"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "245.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://yeamin-sheikh.github.io/california-auto-repair/#store"
+          }
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "NGK Laser Iridium Spark Plugs, set of 4",
+        "image": "https://yeamin-sheikh.github.io/california-auto-repair/assets/images/part-ngk.jpg",
+        "description": "Laser-welded iridium center electrode tip ensures high durability and consistent ignition.",
+        "sku": "NGK-ILZKR7B11",
+        "brand": {
+          "@type": "Brand",
+          "name": "NGK"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "48.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://yeamin-sheikh.github.io/california-auto-repair/#store"
+          }
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -193,7 +337,7 @@
           </div>
           <div class="product-info">
             <span class="product-cat">Fluids &amp; Lubricants</span>
-            <h4>Mobil 1 ESP 0W-40 Synthetic , 5-quart</h4>
+            <h4>Mobil 1 ESP 0W-40 synthetic, 5-quart</h4>
             <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0.5rem 0;">Porsche A40 and Mercedes-Benz 229.5 certified full synthetic formula engineered for extreme thermal protection.</p>
             <div class="product-price">$38.99</div>
             <button class="btn btn-primary add-to-cart-btn" data-id="p-mobil1" data-name="Mobil 1 ESP 0W-40 Synthetic" data-price="38.99" style="width: 100%; margin-top: 0.75rem;">Add to Cart</button>
@@ -207,7 +351,7 @@
           </div>
           <div class="product-info">
             <span class="product-cat">Braking Systems</span>
-            <h4>Brembo P06075N Ceramic Brake Pads</h4>
+            <h4>Brembo P06075N ceramic brake pads</h4>
             <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0.5rem 0;">Direct OEM replacement with premium multi-layer chamfered shims for silent braking and virtually zero brake dust.</p>
             <div class="product-price">$89.50</div>
             <button class="btn btn-primary add-to-cart-btn" data-id="p-brembo" data-name="Brembo Ceramic Brake Pads" data-price="89.50" style="width: 100%; margin-top: 0.75rem;">Add to Cart</button>
@@ -221,7 +365,7 @@
           </div>
           <div class="product-info">
             <span class="product-cat">Engine Sensors</span>
-            <h4>Bosch 17025 Wideband Oxygen Sensor</h4>
+            <h4>Bosch 17025 wideband oxygen sensor</h4>
             <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0.5rem 0;">Patented planar ceramic element provides instant closed-loop air-fuel mixture feedback to maximize fuel economy.</p>
             <div class="product-price">$124.95</div>
             <button class="btn btn-primary add-to-cart-btn" data-id="p-bosch" data-name="Bosch Wideband Oxygen Sensor" data-price="124.95" style="width: 100%; margin-top: 0.75rem;">Add to Cart</button>
@@ -235,7 +379,7 @@
           </div>
           <div class="product-info">
             <span class="product-cat">Electrical</span>
-            <h4>Optima D34/78 YellowTop AGM Battery</h4>
+            <h4>Optima D34/78 YellowTop AGM battery</h4>
             <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0.5rem 0;">SpiralCell technology delivering 750 Cold Cranking Amps with 3x longer cycle life and vibration resistance.</p>
             <div class="product-price">$289.99</div>
             <button class="btn btn-primary add-to-cart-btn" data-id="p-optima" data-name="Optima YellowTop AGM Battery" data-price="289.99" style="width: 100%; margin-top: 0.75rem;">Add to Cart</button>
@@ -249,7 +393,7 @@
           </div>
           <div class="product-info">
             <span class="product-cat">Performance Tires</span>
-            <h4>Michelin Pilot Sport 4S , 245/40ZR18</h4>
+            <h4>Michelin Pilot Sport 4S, 245/40ZR18</h4>
             <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0.5rem 0;">Ultra-high performance summer compound designed for benchmark lateral grip, braking distance, and steering response.</p>
             <div class="product-price">$245.00</div>
             <button class="btn btn-primary add-to-cart-btn" data-id="p-michelin" data-name="Michelin Pilot Sport 4S" data-price="245.00" style="width: 100%; margin-top: 0.75rem;">Add to Cart</button>
@@ -263,7 +407,7 @@
           </div>
           <div class="product-info">
             <span class="product-cat">Ignition</span>
-            <h4>NGK Laser Iridium Spark Plugs , set of 4</h4>
+            <h4>NGK laser iridium spark plugs, set of 4</h4>
             <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0.5rem 0;">Laser-welded iridium center electrode tip ensures high durability and consistently sharp ignition sparks.</p>
             <div class="product-price">$54.80</div>
             <button class="btn btn-primary add-to-cart-btn" data-id="p-ngk" data-name="NGK Laser Iridium Spark Plugs" data-price="54.80" style="width: 100%; margin-top: 0.75rem;">Add to Cart</button>
@@ -274,6 +418,36 @@
   </section>
 
   <!-- Footer -->
+
+  <!-- Written Guarantees and Return Policy -->
+  <section class="section" style="background-color: var(--bg-card); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">OEM Guarantee</span>
+        <h2>Written warranties and return policy</h2>
+        <p>Every genuine factory part is backed by manufacturer warranties and our 30-day return policy.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+        <div style="background: var(--bg-main); padding: 1.75rem; border-radius: 8px; border: 1px solid var(--border-color);">
+          <div class="service-icon-box"><svg class="icon"><use href="#icon-shield-check"></use></svg></div>
+          <h3 style="margin: 0.75rem 0;">30-day unopened parts return policy</h3>
+          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.95rem;">
+            Unused parts in original manufacturer boxes can be returned to our Los Angeles location within 30 days for a full refund. No restocking fees for verified fitment errors.
+          </p>
+        </div>
+
+        <div style="background: var(--bg-main); padding: 1.75rem; border-radius: 8px; border: 1px solid var(--border-color);">
+          <div class="service-icon-box"><svg class="icon"><use href="#icon-wrench"></use></svg></div>
+          <h3 style="margin: 0.75rem 0;">24-month installation warranty</h3>
+          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.95rem;">
+            Parts installed in our service bays include our written 24-month or 24,000-mile parts and labor warranty valid across North America.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   </main>
 
   <footer class="site-footer">
