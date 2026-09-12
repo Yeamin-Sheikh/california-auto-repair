@@ -1,0 +1,22 @@
+{
+  "name": "United Auto Experts Los Angeles",
+  "short_name": "United Auto",
+  "description": "Certified automotive repair facility and OEM parts supplier in Los Angeles, California.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#dc2626",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

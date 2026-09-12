@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="uae-ico-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DC2626" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="10" fill="url(#uae-ico-grad)" />
+  <g transform="translate(6, 6) scale(0.75)">
+    <path d="M35 15 L32 18 L34 20 L31 23 L29 21 L23 27 C22 26 20.5 26 19.5 27 C18.5 28 18.5 29.5 19.5 30.5 L21.5 32.5 C22.5 33.5 24 33.5 25 32.5 C26 31.5 26 30 25 29 L31 23 L33 25 L36 22 L34 20 L37 17 C38 16 38 14 37 13 C36 12 34 12 33 13 Z" fill="#FFFFFF"/>
+    <polygon points="25,7 26.5,11 30.5,11 27.5,13.5 28.5,17.5 25,15 21.5,17.5 22.5,13.5 19.5,11 23.5,11" fill="#FDE047"/>
+  </g>
+</svg>
